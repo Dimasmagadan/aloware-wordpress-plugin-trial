@@ -1,4 +1,8 @@
 <?php
+/**
+ *
+ * @package Aloware
+ */
 
 class Aloware_Idea_Controller {
 

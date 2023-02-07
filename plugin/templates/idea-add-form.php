@@ -1,7 +1,8 @@
 <?php
 /*
- * Template Name: Idea Archive
- * Template Post Type: idea
+ * Idea Submit Form page
+ *
+ * @package Aloware
  */
 
 get_header();

@@ -2,6 +2,8 @@
 /*
  * Template Name: Idea Archive
  * Template Post Type: idea
+ *
+ * @package Aloware
  */
 
 get_header();
