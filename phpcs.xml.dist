@@ -50,7 +50,6 @@
 		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 	</rule>
-	<rule ref="WPThemeReview"/>
 
 	<!--
 	#############################################################################
@@ -62,7 +61,7 @@
 		 Multiple valid text domains can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="starter"/>
+			<property name="text_domain" type="array" value="aloware"/>
 		</properties>
 	</rule>
 
@@ -94,7 +93,7 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="starter" />
+			<property name="prefixes" type="array" value="aloware" />
 		</properties>
 	</rule>
 
@@ -106,7 +105,6 @@
 	-->
 
 	<config name="testVersion" value="7.3-"/>
-	<rule ref="PHPCompatibilityWP"/>
 
 	<rule ref="PSR2">
 		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />

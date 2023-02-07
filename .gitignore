@@ -50,3 +50,4 @@ _wpeprivate*
 .vscode
 .env
 node_modules/
+uploads
