@@ -94,6 +94,9 @@ class Aloware_Plugin {
         add_action( 'wp_ajax_nopriv_aloware_add_idea', [ $this->submit, 'submit_idea' ] );
 
         add_action( 'init', [ $this->controller, 'custom_endpoint' ] );
+
+        add_action( 'wp_footer', [ $this->controller, 'add_post_tpl' ] );
+        add_action( 'wp_footer', [ $this->controller, 'add_img_tpl' ] );
 	}
 
 	/**
@@ -102,8 +105,7 @@ class Aloware_Plugin {
 	private function setup_filters() {
         add_filter( 'template_include', [ $this->archive, 'modify_template_output' ] );
         add_filter( 'template_include', [ $this->controller, 'add_new_idea_endpoint' ] );
-
-        add_filter( 'wp_title',[ $this->controller, 'update_title' ] );
+        add_filter( 'wp_title', [ $this->controller, 'update_title' ] );
 	}
 
 	/**
@@ -117,7 +119,7 @@ class Aloware_Plugin {
 
             wp_enqueue_script(
                 'aloware-idea',
-                WP_PLUGIN_DIR . '/aloware/assets/js/idea.js',
+                plugins_url( 'assets/js/aloware-idea.js', dirname( __FILE__ ) ),
                 [],
                 '1.0.0',
                 true
@@ -127,6 +129,7 @@ class Aloware_Plugin {
                 'aloware',
                 [
                     'ajax_url' => admin_url( 'admin-ajax.php' ),
+                    'nonce' => wp_create_nonce( 'aloware_idea_form_nonce' ),
                 ]
             );
         // }
