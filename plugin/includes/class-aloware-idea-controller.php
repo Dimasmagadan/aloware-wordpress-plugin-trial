@@ -21,10 +21,7 @@ class Aloware_Idea_Controller {
     }
 
     public function ajax_load_more_ideas() {
-        
-        // var_dump( $_POST );
-        // exit;
-        
+
         $page = isset( $_POST['page'] ) ? absint( $_POST['page'] ) : 1;
         $posts_per_page = $this->ideas_per_page;
 
